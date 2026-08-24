@@ -1,18 +1,17 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html>
 <body>
-<button onclick="test()">Trigger Blob Download Bridge</button>
+<button onclick="triggerBridge()">Trigger Native Bridge</button>
 <div id="status"></div>
 <script>
-function test() {
+function triggerBridge() {
     var status = document.getElementById('status');
-    if (typeof window.DownloadPdfFileBlobData === 'undefined') {
-        status.innerHTML = 'DownloadPdfFileBlobData NOT FOUND';
+    if (typeof window.jsInterface === 'undefined') {
+        status.innerHTML = 'jsInterface NOT FOUND';
         return;
     }
-    status.innerHTML = 'DownloadPdfFileBlobData FOUND - invoking bridge';
-    window.DownloadPdfFileBlobData.getBase64FromBlobData("SGVsbG8gV29ybGQ=");
+    status.innerHTML = 'jsInterface FOUND - invoking native bridge';
+    window.jsInterface.messageHandlers("madeFirstDeposit:99:USD");
 }
 </script>
 </body>
