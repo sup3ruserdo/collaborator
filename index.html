@@ -9,7 +9,7 @@ function test() {
         return;
     }
     try {
-        window.windowPost.setIframeTitle("<img src=x onerror=alert(1)>");
+        window.windowPost.setIframeTitle("FAKE TITLE");
         alert("RESULT: setIframeTitle() called successfully - check screen title");
     } catch(e) {
         alert("RESULT: JS ERROR - " + e.message);
