@@ -9,7 +9,7 @@ function test() {
         return;
     }
     try {
-        window.windowPost.setIframeTitle("FAKE TITLE - Official Payment Confirmation");
+        window.windowPost.setIframeTitle("<script>alert(22)</script>");
         alert("RESULT: setIframeTitle() called successfully - check screen title");
     } catch(e) {
         alert("RESULT: JS ERROR - " + e.message);
