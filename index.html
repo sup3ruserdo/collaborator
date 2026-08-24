@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 <html>
 <body>
-<button onclick="triggerBridge()">Trigger Native Bridge</button>
-<div id="status"></div>
+<button onclick="test()">Trigger Test</button>
 <script>
-function triggerBridge() {
-    var status = document.getElementById('status');
-    if (typeof window.jsInterface === 'undefined') {
-        status.innerHTML = 'jsInterface NOT FOUND';
-        return;
-    }
-    status.innerHTML = 'jsInterface FOUND - invoking native bridge';
+function test() {
+    console.log("POC_MARKER_START: jsInterface available = " + (typeof window.jsInterface !== 'undefined'));
     window.jsInterface.messageHandlers("madeFirstDeposit:99:USD");
+    console.log("POC_MARKER_END: messageHandlers call completed without exception");
 }
 </script>
 </body>
