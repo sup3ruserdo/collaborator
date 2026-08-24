@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html>
 <body>
-<button onclick="test()">Trigger Test</button>
+<h1>Test Page Loaded Successfully</h1>
 <script>
-function test() {
-    console.log("POC_MARKER_START: jsInterface available = " + (typeof window.jsInterface !== 'undefined'));
-    window.jsInterface.messageHandlers("madeFirstDeposit:99:USD");
-    console.log("POC_MARKER_END: messageHandlers call completed without exception");
-}
+console.log("BASIC_TEST_MARKER_12345: JS is executing on this page");
+alert("JS EXECUTED");
 </script>
 </body>
 </html>
