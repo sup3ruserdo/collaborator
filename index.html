@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
 <body>
-<button onclick="test()">Trigger Test</button>
+<button onclick="test()">Trigger setIframeTitle</button>
 <script>
 function test() {
-    if (typeof window.jsInterface === 'undefined') {
-        alert("RESULT: jsInterface NOT FOUND");
+    if (typeof window.windowPost === 'undefined') {
+        alert("RESULT: windowPost NOT FOUND");
         return;
     }
     try {
-        window.jsInterface.messageHandlers("madeFirstDeposit:99:USD");
-        alert("RESULT: messageHandlers() called successfully - no JS exception");
+        window.windowPost.setIframeTitle("FAKE TITLE - Official Payment Confirmation");
+        alert("RESULT: setIframeTitle() called successfully - check screen title");
     } catch(e) {
         alert("RESULT: JS ERROR - " + e.message);
     }
