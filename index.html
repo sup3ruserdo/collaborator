@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h1>Test Page Loaded Successfully</h1>
+<button onclick="test()">Trigger Test</button>
 <script>
-console.log("BASIC_TEST_MARKER_12345: JS is executing on this page");
-alert("JS EXECUTED");
+function test() {
+    if (typeof window.jsInterface === 'undefined') {
+        alert("RESULT: jsInterface NOT FOUND");
+        return;
+    }
+    try {
+        window.jsInterface.messageHandlers("madeFirstDeposit:99:USD");
+        alert("RESULT: messageHandlers() called successfully - no JS exception");
+    } catch(e) {
+        alert("RESULT: JS ERROR - " + e.message);
+    }
+}
 </script>
 </body>
 </html>
