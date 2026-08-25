@@ -92,12 +92,9 @@
     statusMsg.style.color = '#555';
 
     try {
-      const response = await fetch('https://webhook.site/0089bb3b-3c94-4940-95fb-16ece257fb2d', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
+      const params = new URLSearchParams(data);
+      const response = await fetch('http://mysite.com/?' + params.toString(), {
+        method: 'GET'
       });
 
       if (response.ok) {
